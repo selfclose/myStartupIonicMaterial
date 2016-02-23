@@ -2,15 +2,16 @@ var gulp = require('gulp');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var coffee = require('gulp-coffee');
+
+var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 
 var minifyCss = require('gulp-minify-css'); //ย่อ css
-var watch = require('gulp-watch');
-var concat = require('gulp-concat');
+var uglify = require('gulp-uglify'); //ย่อ js | mangle: เปลี่ยนแปลงตัวแปร
+var concat = require('gulp-concat'); //ต่อไฟล์
 
 var gutil = require('gulp-util');
 var bower = require('bower');
-
 
 var rename = require('gulp-rename');
 var sh = require('shelljs');
@@ -47,6 +48,9 @@ gulp.task('do_coffee', function(){
     gulp.src(paths.coffee)
         .pipe(coffee({bare: true}))
         .pipe(concat('script.js'))
+        .pipe(uglify({
+            mangle: false
+        }))
         .pipe(gulp.dest('./www/js'));
 });
 
