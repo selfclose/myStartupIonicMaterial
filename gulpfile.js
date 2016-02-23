@@ -36,7 +36,7 @@ gulp.task('do_jade', function(){
 gulp.task('do_sass', function(){
     gulp.src(paths.scss)
         .pipe(sass())
-        .pipe(concat('style.css'))
+        .pipe(concat('style.min.css'))
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
@@ -47,7 +47,7 @@ gulp.task('do_sass', function(){
 gulp.task('do_coffee', function(){
     gulp.src(paths.coffee)
         .pipe(coffee({bare: true}))
-        .pipe(concat('script.js'))
+        .pipe(concat('script.min.js'))
         .pipe(uglify({
             mangle: false
         }))
