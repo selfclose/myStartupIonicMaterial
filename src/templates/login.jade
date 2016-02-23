@@ -1,0 +1,15 @@
+ion-view(view-title='Login', align-title='left')
+    ion-content(style='background: url(img/login.jpg) center; background-size: cover;')
+        .hero.no-header.flat
+            .content
+                .app-icon
+                h1 Thronester
+        .list
+            ion-md-input(placeholder='Username', highlight-color='balanced', type='text')
+            ion-md-input(placeholder='Password', highlight-color='energized', type='password')
+        .padding
+            button.button.button-full.button-assertive.ink(ui-sref='app.profile') Login
+        .button-bar.social-login
+            button.button.button-small.button-border.icon-left.ion-social-google.button-assertive-900 Google+
+            button.button.button-small.button-border.icon-left.ion-social-twitter.button-calm-900 Twitter
+            button.button.button-small.button-border.icon-left.ion-social-facebook.button-positive-900 Facebook
