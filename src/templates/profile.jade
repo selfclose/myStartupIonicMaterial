@@ -1,0 +1,38 @@
+ion-view(view-title='Profile')
+    ion-content(ng-class='{expanded:$scope.isExpanded}')
+        .hero.slide-up(style="background-image: url('img/profile-bg.jpg');")
+            .content
+                .avatar(style="background-image: url('img/daenerys.jpg');")
+                h3
+                    a.light Daenerys Targaryen
+                h4 dragon_mommy
+        .tabs.tabs-dark.tabs-icon-top.static
+            a.tab-item(ui-sref='app.activity')
+                i.icon.ion-arrow-graph-up-right
+                |  Activity
+            a.tab-item(ui-sref='app.friends')
+                i.icon.ion-android-people
+                |  Friends
+            a.tab-item(ui-sref='app.gallery')
+                i.icon.ion-images
+                |  Photos
+        h4.content.padding.double-padding-x Following
+        .list.animate-fade-slide-in-right
+            a.item.item-avatar.item-icon-right(ui-sref='app.friends')
+                img(src='img/jon-snow.jpg')
+                h2 Jon Snow
+                p Da illest illegitimate
+                i.icon.ion-chatbubble.muted
+            a.item.item-avatar.item-icon-right(ui-sref='app.friends')
+                img(src='img/sansa.jpg')
+                h2 Sansa Stark
+                p
+                    | & Joffrey
+                    strike sitting
+                    |  sat in a tree
+                i.icon.ion-chatbubble.muted
+            a.item.item-avatar.item-icon-right(ui-sref='app.friends')
+                img(src='img/tyrion.jpg')
+                h2 Tyrion Lannister
+                p B.A.M.F. imp
+                i.icon.ion-chatbubble.muted
